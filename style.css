@@ -1,0 +1,268 @@
+* {
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+:root {
+    --transparentblue: rgb(225, 229, 234);
+    --lightblue: rgb(0, 128, 255);
+    /* --hoverblue: rgb(0, 115, 255); */
+    --blue: blue;
+    --white:white;
+    --black: black;
+}
+
+/* header style starts */
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: var(--white);
+}
+header .nav-bar {
+    display: flex;
+    width: 100%;
+    padding: 0 15px;
+    height: 60px;
+    align-items: center;justify-content: space-between;
+}
+header .nav-bar i {
+    display: none;
+}
+header .nav-bar .navlinks {
+    height: 100%;
+    display: flex; align-items: center;
+}
+header .nav-bar .navlinks a {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 19px;
+    color: var(--black);
+}
+header .nav-bar .navlinks .logo {
+    font-size: 28px;
+    color: var(--blue);
+}
+header .nav-bar .navlinks a:hover {
+    color: var(--blue);
+}
+
+button, button.active:hover {
+    width: 100px;
+    padding: 7px 0;
+    font-size: 17px;
+    margin-left: 15px;
+    background-color: var(--lightblue);
+    color: var(--white);
+    border: 2px solid var(--lightblue);
+    border-radius: 5px;
+    cursor: pointer;
+}
+button.active, button:hover {
+    background:transparent;
+    color: var(--lightblue);
+}
+button:active {
+    transform: scale(0.98);
+}
+header .quiz-links{
+    padding: 0 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--black);
+}
+header .quiz-links a {
+    display: inline-block;
+    color: white;
+    height: 28px;
+    line-height: 25px;
+    padding: 0 15px;
+    margin: 0 8px;
+    text-transform: uppercase;
+    background-color: var(--black);
+}
+header .quiz-links a:hover {
+    background-color: var(--blue);
+}
+
+
+/* side bar styles */
+.sidebar {
+    position: fixed;
+    width: 250px;
+    height: 90vh;
+    background-color: var(--transparentblue);
+    top: 88px;
+    overflow-y: scroll;
+    transition: left 0.3s ease;
+}
+.sidebar h1 {
+    color: var(--black);
+    padding: 0 30px;
+    font-weight: 500;
+    margin:18px 0;
+    font-size: 28px;
+}
+.sidebar a {
+    display: block;
+    text-transform: capitalize;
+    color: var(--black);
+    border-bottom: 1px solid rgb(169, 213, 255);
+    padding: 7px 30px;
+}
+.sidebar a:hover {
+    background-color: var(--lightblue);
+    color: var(--white);
+}
+.sidebar a:first-of-type{
+    border-top: 1px solid rgb(169, 213, 255);
+}
+.sidebar a:last-of-type {
+    margin-bottom: 15px;
+}
+
+
+/* home styles */
+.container{
+    position:relative;
+    top: 88px;
+    left: 250px;
+    width: calc(100vw - 268px);
+    padding: 15px 15px 0 15px;
+}
+
+.home h1, h2{
+    color: var(--black);
+}
+.home h2 {
+    font-weight: 400;
+}
+.home p {
+    margin: 15px 0;
+    color: var(--black);
+    font-size: 17px;
+}
+.home p a {
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 18px;
+}
+.home button {
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+.home .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    display: flex;
+    margin: 20px 0;
+}
+.home .cards .card {
+    flex: 1 1 300px;
+    background-color: var(--transparentblue);
+    border: 2px solid var(--transparentblue);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 8px;
+    height: 300px;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+.home .cards .card:hover{
+    background-color: var(--white);
+}
+
+.home .cards .card h1 {
+    text-transform: uppercase;
+}
+.home .cards .card p {
+    font-size: 18px;
+    text-align: center;
+}
+.home .cards .card button {
+    width: 180px;
+    border-radius: 20px;
+}
+
+.home .news-letter {
+    background-color: rgb(207, 232, 255);
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    align-items: center;
+}
+.home .news-letter h1, h3 {
+    font-weight: 400;
+    text-align: center;
+}
+.home .news-letter input {
+    width: 98%;
+    max-width: 400px;
+    padding: 7px 15px;
+    border: 2px solid var(--lightblue);
+    border-radius: 5px;
+    font-size: 17px;
+    background: transparent;
+    margin: 15px 0;
+    outline: none;
+}
+.home .news-letter input:focus{
+    border-color: var(--blue);
+}
+.home footer {
+    padding: 5px 0;
+    text-align: center;
+    margin-top: 5px;
+    color: rgb(211, 215, 216);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+@media all and (max-width:700px) {
+    header button:not(.active) {
+        display: none;
+    }
+    header .nav-bar .navlinks a:not(.logo) {
+        display: none;
+    }
+    header .quiz-links {
+        display: none;
+    }
+    .sidebar {
+        top: 65px;
+    }
+}
+
+@media all and (max-width:900px) {
+    header .nav-bar i {
+        display: inline-block;
+        font-size: 20px;
+        color: var(--lightblue);
+        cursor: pointer;
+    }
+    header .nav-bar i:hover{
+        color: var(--blue);
+    }
+    .sidebar {
+        left: -100%;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+    .container{
+        position:relative;
+        top: 88px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 15px;
+    }
+}
