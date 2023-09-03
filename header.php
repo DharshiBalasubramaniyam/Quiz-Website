@@ -27,7 +27,7 @@
         <div class="quiz-links">
             <?php 
                 for ($i = 0; $i < 7; $i++) {
-                    echo "<a href='#'>{$topics[$i]['topic_name']}</a>";
+                    echo "<a href='database/questions.php?topicid={$topics[$i]['topic_id']}'>{$topics[$i]['topic_name']}</a>";
                 } 
             ?>
         </div>
@@ -37,7 +37,7 @@
         <h1>Online quizes</h1>
         <?php 
             foreach ($topics as $topic) {
-                echo "<a href='#'>Quiz&nbsp&nbsp{$topic['topic_name']}</a>";
+                echo "<a href='database/questions.php?topicid={$topic['topic_id']}'>Quiz&nbsp&nbsp{$topic['topic_name']}</a>";
             } 
         ?>
     </div>

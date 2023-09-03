@@ -98,6 +98,7 @@ header .quiz-links a:hover {
     top: 88px;
     overflow-y: scroll;
     transition: left 0.3s ease;
+    z-index: 5;
 }
 .sidebar h1 {
     color: var(--black);
@@ -108,7 +109,7 @@ header .quiz-links a:hover {
 }
 .sidebar a {
     display: block;
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: var(--black);
     border-bottom: 1px solid rgb(169, 213, 255);
     padding: 7px 30px;
@@ -225,6 +226,85 @@ header .quiz-links a:hover {
 }
 
 
+/* quiz styles */
+.quiz {
+    
+}
+.quiz h1, h2 {
+    text-align: left;
+}
+.quiz h2{
+    margin: 15px 0;
+}
+.quiz .content {
+    padding: 20px;
+    border: 2px solid var(--transparentblue);
+    width: 98%;
+    max-width: 800px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+}
+.quiz .top{
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 18px;
+    font-weight: 600;
+}
+.quiz .top .time{
+    color: var(--blue);
+}
+.quiz .question, .quiz .option {
+    width: 100%;
+    font-size: 18px;
+    text-align: left;
+    color: var(--blue);
+}
+.quiz .question {font-size: 19px;}
+.quiz .option {
+    border: 2px solid var(--lightblue);
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    color: var(--black);
+}
+.quiz .option:hover {
+    background-color: var(--transparentblue);
+}
+.quiz .btn {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    margin-top: 15px;
+}
+.quiz button {
+    width: 180px;
+    margin-left: 0;
+}
+
+
+/* results style */
+.results p {
+    font-size:20px;
+}
+.results p .percentage{
+    font-weight:600;
+}
+.results p .message{
+    font-weight:600;
+    font-size:23px;
+    color:#00d000;
+}
+.results button {
+    margin: 0 15px 0 0 ;
+}
+
+
 
 @media all and (max-width:700px) {
     header button:not(.active) {
@@ -237,7 +317,13 @@ header .quiz-links a:hover {
         display: none;
     }
     .sidebar {
-        top: 65px;
+        top: 61px; height: 91vh;
+    }
+    .quiz .top {
+        font-size: 15px;
+    }
+    .quiz .question, .quiz .option {
+        font-size: 16px;
     }
 }
 
